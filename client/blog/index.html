@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <base href="/" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/_content/images/logo.png" type="image/png" />
+    <link rel="icon" href="/_content/images/logo.png" type="image/png" />
+
+    <title>Olatunde Oladunni</title>
+    <meta name="description" content="<%- locals.metaDescription || "MEANie Blog" %>" />
+
+    <style>
+        /* fonts & icons */
+        <%- include('_content/fonts/montserrat.css') %>
+        <%- include('_content/icomoon/style.css') %>
+
+        /* bootstrap */
+        <%- include('_content/bootstrap.css') %>
+
+        /* syntax higlighter */
+        <%- include('_content/syntaxhighlighter/css/shCore.css') %>
+        <%- include('_content/syntaxhighlighter/css/shThemeDefault.css') %>
+
+        /* custom */
+        <%- include('_dist/app.css') %>
+    </style>
+
+    
+</head>
+<body>
+    <!-- nav -->
+    <div class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" ng-click="showNav = !showNav">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <img src="/_content/images/logo.png" />
+                    <span>MEANie</span>
+                </a>
+            </div>
+            <div class="navbar-collapse ng-cloak" ng-class="{'in': showNav, 'collapse': !showNav}">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/archive">Archive</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- main -->
+    <main ui-view>
+        <% if(locals.templateUrl) { %>
+            <div ng-non-bindable>
+                <%- include(locals.templateUrl) %>
+            </div>
+        <% } %>
+	</main>
+
+    <!-- footer -->
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h4>Suscipit</h4>
+                    <p>
+                        Accumsan vestibulum nulla imperdiet dolor ut tempus ultricies nam sed posuere mi id molestie tortor quisque suscipit convallis ex in interdum tortor vestibulum ac phasellus. 
+                    </p>
+                    <p>
+                       Viverra id felis a lacinia sed metus orci gravida non neque ut elementum facilisis est cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus quisque mollis nulla in quam.
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Months</h4>
+                    <%- include('_partials/month-list.html') %>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Helpful Links</h4>
+                    <ul>
+                        <li><a href="../admin" target="_blank">Admin Login</a></li>                        
+                    </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container text-center copyright">
+        Powered by <a href="#" target="_blank">Olatunde Oladunni - Web App Developer</a>
+    </div>
+
+    <!-- syntax highlighter -->
+    <script src="/_content/syntaxhighlighter/js/shCore.js"></script>
+    <script src="/_content/syntaxhighlighter/js/shBrushCSharp.js"></script>
+    <script src="/_content/syntaxhighlighter/js/shBrushCss.js"></script>
+    <script src="/_content/syntaxhighlighter/js/shBrushJScript.js"></script>
+    <script src="/_content/syntaxhighlighter/js/shBrushPlain.js"></script>
+    <script src="/_content/syntaxhighlighter/js/shBrushSql.js"></script>
+    <script src="/_content/syntaxhighlighter/js/shBrushVb.js"></script>
+    <script src="/_content/syntaxhighlighter/js/shBrushXml.js"></script>
+    <script>
+        SyntaxHighlighter.defaults['gutter'] = true;
+        SyntaxHighlighter.defaults['smart-tabs'] = true;
+        SyntaxHighlighter.defaults['auto-links'] = true;
+        SyntaxHighlighter.defaults['collapse'] = false;
+        SyntaxHighlighter.defaults['light'] = false;
+        SyntaxHighlighter.defaults['tab-size'] = 4;
+        SyntaxHighlighter.defaults['toolbar'] = true;
+        SyntaxHighlighter.defaults['wrap-lines'] = true;
+    </script>
+
+    <!-- jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <!--materializecss-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+    
+    <!-- angular -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-messages.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+
+    <!-- meanie -->
+    <script src="/_dist/app.min.js"></script>
+</body>
+</html>
