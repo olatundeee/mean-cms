@@ -14,7 +14,7 @@ var pager = require('helpers/pager');
 
 var basePath = path.resolve('../client/blog');
 var indexPath = basePath + '/index';
-var metaTitleSuffix = " | MEANie - The MEAN Stack Blog";
+var metaTitleSuffix = "";
 var oneWeekSeconds = 60 * 60 * 24 * 7;
 var oneWeekMilliseconds = oneWeekSeconds * 1000;
 
@@ -267,6 +267,7 @@ router.get('/archive', function (req, res, next) {
 
     render('archive/index.view.html', req, res);
 });
+
 
 // contact route
 router.get('/contact', function (req, res, next) {

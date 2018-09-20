@@ -1,28 +1,33 @@
-﻿<div class="posts-index">
-    <div class="index-header">
-        <h1>Posts</h1>
-        <div class="buttons">
-            <a href="#/posts/add" class="btn btn-default">
-                <i class="glyphicon glyphicon-plus"></i> New Post
+﻿<div class="posts-area">
+    <div class="posts-area-header row">
+        <div class="col l6 m6">
+            <h5>Posts</h5>
+        </div>
+        
+        <div class="col l6 m6 new-post-button">
+            <a href="#/posts/add" class="waves-effect waves-light btn right indigo lighten-2 add">
+                <i class="icon ion-ios-add"></i>
             </a>
         </div>
     </div>
-    <table class="posts-table table table-striped">
-        <tr>
-            <th>Title</th>
-            <th>Tags</th>
-            <th>Publish Date</th>
-            <th class="text-center">Published</th>
-            <th></th>
-        </tr>
-        <tr ng-repeat="post in vm.posts">
-            <td>{{post.title}}</td>
-            <td>{{post.tags | csv}}</td>
-            <td>{{post.publishDate | date:'dd/MM/yyyy'}}</td>
-            <td class="text-center"><i ng-if="post.publish" class="glyphicon glyphicon-ok" /></td>
-            <td class="action-icons">
-                <a href="#/posts/edit/{{post._id}}" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
-            </td>
-        </tr>
-    </table>
+    <div class="row">
+        <div class="col l6 m6" ng-repeat="post in vm.posts">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title activator">Post Title: <br> <span class="center">{{post.title}}<i class="icon ion-md-more right"></i></span></i></span>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title"><i class="icon ion-md-close right"></i></span>
+                    <ul class="collection">
+                        <li class="collection-item">Tags: <span class="right">{{post.tags | csv}}</span></li>
+                        <li class="collection-item">Publish Date: <span class="right">{{post.publishDate | date:'dd/MM/yyyy'}}</span></li>
+                        <li class="collection-item">Published <i ng-if="post.publish" class="icon ion-md-checkmark checkmark right" /></li>
+                    </ul>
+                </div>
+                <div class="card-action">
+                    <a href="#/posts/edit/{{post._id}}" class="btn indigo lighten-2 edit-btn"><i class="icon ion-md-create"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,20 +1,14 @@
-﻿<div class="account-index">
-    <h1>My Account</h1>
-    <div class="row">
-        <div class="col-sm-4">
-            <form method="post">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" class="form-control" ng-model="vm.user.username" required />
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" class="form-control" ng-model="vm.user.password" />
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-primary" ng-click="vm.saveUser()">Update</button>
-                </div>
-            </form>
+﻿<div class="add-edit-form-area container">
+    <h5>My Account</h5>
+    <form method="post">
+        <div class="input-field">
+            <input placeholder="Username" id="username" type="text"  ng-model="vm.user.username" required />
         </div>
-    </div>
+        <div class="input-field">
+            <input placeholder="Password" type="text" id="password" ng-model="vm.user.password" />
+        </div>
+        <div class="center">
+            <a class="btn waves waves-effect indigo lighten-2" ng-click="vm.saveUser()">UPDATE</a>
+        </div>
+    </form>
 </div>

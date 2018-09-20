@@ -1,0 +1,70 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.admin-sidebar {
+	padding-top: 50px !important;
+	/*padding-left: 50px !important;*/
+}
+
+.card {
+	width: 90% !important;
+}
+
+.most-recent-area {
+	padding-left: 5% !important;
+	margin-top: 50px;
+}
+
+.main-content-area {
+	margin-top: 50px !important;
+}
+
+.brand-logo {
+	margin-left: 50px;
+}
+
+.tabs {
+	padding-left: 120px !important;
+}
+
+.checkmark {
+	font-size: 24px;
+}
+
+.posts-area-header {
+	padding-top: 50px;
+}
+
+.new-post-button {
+	margin-top: 10px;
+	padding-right: 100px !important;
+}
+
+.add {
+	text-decoration-style: solid;
+}
+
+.card-title {
+	font-size: 18px !important;
+}
+
+.edit-btn {
+	margin-left: 200px;
+}
+
+.add-post-area {
+	border: 3px solid #000;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	padding: 50px;
+	border-radius: 5%;
+}
+
+.add-edit-form-area {
+	border: 3px solid #000;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	padding: 50px;
+	border-radius: 4%;
+}

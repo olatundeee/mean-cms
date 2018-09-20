@@ -1,24 +1,25 @@
-﻿<div class="pages-index">
-    <div class="index-header">
-        <h1>Pages</h1>
-        <div class="buttons">
-            <a href="#/pages/add" class="btn btn-default">
-                <i class="glyphicon glyphicon-plus"></i> New Page
+﻿<div class="posts-area">
+    <div class="posts-area-header row">
+        <div class="col l6 m6">
+            <h5>Pages</h5>
+        </div>
+        <div class="col l6 m6 new-post-button">
+            <a href="#/pages/add" class="waves-effect waves-light btn right indigo lighten-2 add">
+                <i class="icon ion-ios-add"></i>
             </a>
         </div>
     </div>
-    <table class="pages-table table table-striped">
-        <tr>
-            <th>Title</th>
-            <th class="text-center">Published</th>
-            <th></th>
-        </tr>
-        <tr ng-repeat="page in vm.pages">
-            <td>{{page.title}}</td>
-            <td class="text-center"><i ng-if="page.publish" class="glyphicon glyphicon-ok" /></td>
-            <td class="action-icons">
-                <a href="#/pages/edit/{{page._id}}" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
-            </td>
-        </tr>
-    </table>
+    <div class="row">
+        <div class="col l6 m6" ng-repeat="page in vm.pages">
+            <div class="card">
+                <div class="card-content">
+                    <p class="card-title">Page Title: <br> <span class="center">{{page.title}}</span></p>
+                    <p>Published <i ng-if="page.publish" class="icon ion-md-checkmark checkmark right" /></p>
+                </div>
+                <div class="card-action">
+                    <a href="#/pages/edit/{{page._id}}" class="btn indigo lighten-2 edit-btn"><i class="icon ion-md-create"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

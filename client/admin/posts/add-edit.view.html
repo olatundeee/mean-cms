@@ -1,44 +1,43 @@
-﻿<div class="posts-add-edit">
-    <h1>Post Details</h1>
+﻿<div class="add-post-area container">
+    <h5>Post Details</h5>
     <form ng-if="!vm.loading">
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" id="title" class="form-control" ng-model="vm.post.title" />
+        <div class="input-field">
+            <input placeholder="Title" id="title" type="text"  ng-model="vm.post.title" />
         </div>
-        <div class="form-group">
-            <label for="slug">Slug</label>
-            <input type="text" id="slug" class="form-control" ng-model="vm.post.slug" />
-            <a class="generate-slug" ng-click="vm.post.slug = (vm.post.title | slugify)">Generate from title</a>
+        <div class="input-field">
+            <input placeholder="Slug" type="text" id="slug" ng-model="vm.post.slug" />
+            <a class="generate-slug btn waves waves-effect indigo lighten-2" ng-click="vm.post.slug = (vm.post.title | slugify)">Generate from title</a>
         </div>
-        <div class="form-group">
-            <label for="summary">Summary</label>
-            <textarea id="summary" class="form-control" ng-model="vm.post.summary" rows="4"></textarea>
+        <div class="input-field">
+            <textarea placeholder="Summary" id="summary" ng-model="vm.post.summary" rows="4"></textarea>
         </div>
-        <div class="form-group">
-            <label for="body">Body</label>
-            <textarea class="form-control" ng-model="vm.post.body" wysiwyg></textarea>
+        <div class="input-field">
+            <textarea ng-model="vm.post.body" wysiwyg></textarea>
         </div>
-        <div class="form-group">
-            <label for="title">Tags</label>
-            <input type="text" id="tags" class="form-control" ng-model="vm.post.tags" tags />
+        <div class="input-field">
+            <input type="text" id="tags" placeholder="Tags" ng-model="vm.post.tags" tags />
         </div>
-        <div class="form-group">
-            <label for="publish-date">Publish Date</label>
-            <div class="input-group">
-                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                <input type="text" id="publish-date" class="form-control" ng-model="vm.post.publishDate" datepicker />
-            </div>
+        <div class="post-date">
+            <i class="icon ion-md-calendar"></i>
+            <input type="text" placeholder="Publish Date" id="publish-date" ng-model="vm.post.publishDate" class="datepicker" />
         </div>
-        <div class="checkbox">
+        <p>
             <label>
-                <input type="checkbox" ng-model="vm.post.publish"> Publish
+                <input type="checkbox" ng-model="vm.post.publish" />
+                <span>Publish</span>
             </label>
-        </div>
-        <hr />
-        <div class="form-group">
-            <a class="btn btn-primary" ng-click="vm.savePost()">Save</a>
-            <a class="btn btn-default" href="#/posts">Cancel</a>
-            <a class="btn btn-danger" ng-click="vm.deletePost()" ng-show="vm.post._id">Delete</a>
+        </p>
+        <div class="center">
+            <a class="btn waves waves-effect indigo lighten-2" ng-click="vm.savePost()">SAVE</a>
+            <a class="btn waves waves-effect indigo lighten-2" href="#/posts">CANCEL</a>
+            <a class="btn waves waves-effect indigo lighten-2" ng-click="vm.deletePost()" ng-show="vm.post._id">DELETE</a>
         </div>
     </form>
 </div>
+
+
+<script>
+    $(document).ready(function(){
+        $('.datepicker').datepicker();
+    });
+</script>

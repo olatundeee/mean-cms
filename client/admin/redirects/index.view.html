@@ -1,24 +1,25 @@
-﻿<div class="redirects-index">
-    <div class="index-header">
-        <h1>301 Redirects</h1>
-        <div class="buttons">
-            <a href="#/redirects/add" class="btn btn-default">
-                <i class="glyphicon glyphicon-plus"></i> New Redirect
+﻿<div class="posts-area">
+    <div class="posts-area-header row">
+        <div class="col l6 m6">
+            <h5>301 Redirects</h5>
+        </div>
+        <div class="col l6 m6 new-post-button">
+            <a href="#/redirects/add" class="waves-effect waves-light btn right indigo lighten-2 add">
+                <i class="icon ion-ios-add"></i>
             </a>
         </div>
     </div>
-    <table class="redirects-table table table-striped">
-        <tr>
-            <th>From</th>
-            <th>To</th>
-            <th></th>
-        </tr>
-        <tr ng-repeat="redirect in vm.redirects">
-            <td>{{redirect.from}}</td>
-            <td>{{redirect.to}}</td>
-            <td class="action-icons">
-                <a href="#/redirects/edit/{{redirect._id}}" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
-            </td>
-        </tr>
-    </table>
+    <div class="row">
+        <div class="col l6 m6" ng-repeat="redirect in vm.redirects">
+            <div class="card">
+                <div class="card-content">
+                    <p>Redirect From: <br> <span class="center">{{redirect.from}}</span></p>
+                    <p>Redirect To:  <br> <span class="center">{{redirect.to}}</span></p>
+                </div>
+                <div class="card-action">
+                    <a href="#/redirects/edit/{{redirect._id}}" class="btn indigo lighten-2 edit-btn"><i class="icon ion-md-create"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

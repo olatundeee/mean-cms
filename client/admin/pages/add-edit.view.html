@@ -1,33 +1,29 @@
-﻿<div class="pages-add-edit">
-    <h1>Page Details</h1>
+﻿<div class="add-post-area container">
+    <h5>Page Details</h5>
     <form ng-if="!vm.loading">
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" id="title" class="form-control" ng-model="vm.page.title" required />
+        <div class="input-field">
+            <input placeholder="Title" id="title" type="text"  ng-model="vm.page.title" />
         </div>
-        <div class="form-group">
-            <label for="slug">Slug</label>
-            <input type="text" id="slug" class="form-control" ng-model="vm.page.slug" />
-            <a class="generate-slug" ng-click="vm.page.slug = (vm.page.title | slugify)">Generate from title</a>
+        <div class="input-field">
+            <input placeholder="Slug" type="text" id="slug" ng-model="vm.page.slug" />
+            <a class="generate-slug btn waves waves-effect indigo lighten-2" ng-click="vm.page.slug = (vm.page.title | slugify)">Generate from title</a>
         </div>
-        <div class="form-group">
-            <label for="description">Description</label>
-            <textarea id="description" class="form-control" ng-model="vm.page.description" rows="4"></textarea>
+        <div class="input-field">
+            <textarea placeholder="Summary" id="summary" ng-model="vm.page.description" rows="4"></textarea>
         </div>
-        <div class="form-group">
-            <label for="body">Body</label>
-            <textarea class="form-control" ng-model="vm.page.body" wysiwyg></textarea>
+        <div class="input-field">
+            <textarea ng-model="vm.page.body" wysiwyg></textarea>
         </div>
-        <div class="checkbox">
+        <p>
             <label>
-                <input type="checkbox" ng-model="vm.page.publish"> Publish
+                <input type="checkbox" ng-model="vm.page.publish" />
+                <span>Publish</span>
             </label>
-        </div>
-        <hr />
-        <div class="form-group">
-            <a class="btn btn-primary" ng-click="vm.savePage()">Save</a>
-            <a class="btn btn-default" href="#/pages">Cancel</a>
-            <a class="btn btn-danger" ng-click="vm.deletePage()" ng-show="vm.page._id">Delete</a>
+        </p>
+        <div class="center">
+            <a class="btn waves waves-effect indigo lighten-2" ng-click="vm.savePage()">SAVE</a>
+            <a class="btn waves waves-effect indigo lighten-2" href="#/pages">CANCEL</a>
+            <a class="btn waves waves-effect indigo lighten-2" ng-click="vm.deletePage()" ng-show="vm.page._id">DELETE</a>
         </div>
     </form>
 </div>
