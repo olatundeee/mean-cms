@@ -1,16 +1,33 @@
-﻿<div class="post-list">
+﻿<div class="row">
     <% posts.forEach(function(post) { %>
-        <div class="post">
-            <div class="container">
-                <div class="publish-date"><%= post.publishDateFormatted %></div>
-                <h2 class="post-title">
-                    <a href="<%= post.url %>"><%= post.title %></a>
-                </h2>
-                <div class="post-summary"><%= post.summary %></div>
+        <div class="post-area">
+            <div class="row center">
+                <div class="col l12 m12 center center-align post-title-area">
+                    <a href="<%= post.url %>">
+                        <h5 class="center-align"><%= post.title %></h5>
+                    </a>
+                </div>
+                <div class="post-metadata">
+                    <div class="col l3 m3 post-publishdate yellow black-text center-align">
+                        <%= post.publishDateFormatted %>
+                    </div>
+                    <div class="col l8 m8 yellow black-text center-align post-tag-slug">
+                        <span class="left">Tags:</span>
+                        <% var postTags = post.tags %>
+                        <% postTags.forEach(function(tag) { %>
+                            <span class="post-tag"><%= tag %></span>
+                        <% }) %>
+                    </div>
+                </div>
+                <div class="col l12 m12 post-summary-area">
+                    <%= post.summary %>
+                </div>
             </div>
-        </div>
+        </div>    
     <% }) %>
 </div>
+
+
 
 <% if(locals.pager && locals.pager.endPage > 1) { %>
     <div class="post-pager">

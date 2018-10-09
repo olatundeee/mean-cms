@@ -1,97 +1,83 @@
 ﻿<!DOCTYPE html>
-<html ng-app="app">
+<html>
 <head>
-    <base href="/" />
-
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MEAN-CMS - The MEAN Stack Blog</title>
 
-    <link rel="shortcut icon" href="/_content/images/logo.png" type="image/png" />
-    <link rel="icon" href="/_content/images/logo.png" type="image/png" />
+    <link rel="shortcut icon" href="/admin/_content/images/logo.png" type="image/png" />
+    <link rel="icon" href="/admin/_content/images/logo.png" type="image/png" />    
 
-    <title>Olatunde Oladunni</title>
-    <meta name="description" content="<%- locals.metaDescription || "MEANie Blog" %>" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://unpkg.com/ionicons@4.4.4/dist/css/ionicons.min.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Oswald:400,300,700" rel="stylesheet">
 
     <style>
-        /* fonts & icons */
-        <%- include('_content/fonts/montserrat.css') %>
-        <%- include('_content/icomoon/style.css') %>
-
-        /* bootstrap */
-        <%- include('_content/bootstrap.css') %>
-
-        /* syntax higlighter */
-        <%- include('_content/syntaxhighlighter/css/shCore.css') %>
-        <%- include('_content/syntaxhighlighter/css/shThemeDefault.css') %>
-
-        /* custom */
-        <%- include('_dist/app.css') %>
+        <%- include('css/style.css') %>
     </style>
-
-    
 </head>
 <body>
-    <!-- nav -->
-    <div class="navbar navbar-inverse navbar-static-top">
+    <section class="section-header black">
+        <nav class="container black">
+            <a href="#" class="brand-logo"><span class="yellow-text">MEAN</span> <span class="white-text">CMS</span></a>
+            <br>
+            <ul class="center nav-list yellow">
+                <li><a href="/" class="black-text nav-item">Home</a></li>
+                <li><a href="/archive" class="black-text nav-item">Archive</a></li>
+                <li><a href="/contact" class="black-text nav-item">Contact</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section class="blog-header center center-align">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" ng-click="showNav = !showNav">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">
-                    <img src="/_content/images/logo.png" />
-                    <span>MEANie</span>
-                </a>
-            </div>
-            <div class="navbar-collapse ng-cloak" ng-class="{'in': showNav, 'collapse': !showNav}">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/archive">Archive</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                </ul>
-            </div>
+            <h1 style="font-family: oswald"><span class="yellow-text">Lorem </span><span class="grey-text">Ipsum </span><span class="black-text">Blog</span></h1>
         </div>
-    </div>
+    </section>
 
-    <!-- main -->
-    <main ui-view>
-        <% if(locals.templateUrl) { %>
-            <div ng-non-bindable>
-                <%- include(locals.templateUrl) %>
+    <section class="section-body grey lighten-3" ui-view>
+        <div class="row">
+            <div class="col l9 m9">
+                <% if(locals.templateUrl) { %>
+                    <div ng-non-bindable>
+                        <%- include(locals.templateUrl) %>
+                    </div>
+                <% } %>
             </div>
-        <% } %>
-	</main>
-
-    <!-- footer -->
-    <div id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <h4>Suscipit</h4>
-                    <p>
-                        Accumsan vestibulum nulla imperdiet dolor ut tempus ultricies nam sed posuere mi id molestie tortor quisque suscipit convallis ex in interdum tortor vestibulum ac phasellus. 
-                    </p>
-                    <p>
-                       Viverra id felis a lacinia sed metus orci gravida non neque ut elementum facilisis est cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus quisque mollis nulla in quam.
-                    </p>
-                </div>
-                <div class="col-sm-4">
-                    <h4>Months</h4>
-                    <%- include('_partials/month-list.html') %>
-                </div>
-                <div class="col-sm-4">
-                    <h4>Helpful Links</h4>
-                    <ul>
-                        <li><a href="../admin" target="_blank">Admin Login</a></li>                        
+            <div class="col l3 m3">
+                <div class="col l12 m12 side-widget-area">
+                    <ul class="tabs">
+                        <li class="tab center side-widget"><a href="#months-list" class="active center-align yellow white-text">Months</a></li>
                     </ul>
+                    <div id="months-list" class="center center-align side-widget-content white yellow-text">
+                        <%- include('_partials/month-list.html') %>
+                    </div>
+                </div>
+                <div class="col l12 m12 side-widget-area">
+                    <ul class="tabs">
+                        <li class="tab center side-widget"><a href="#months-list" class="active center-align yellow white-text">Tags</a></li>
+                    </ul>
+                    <div id="months-list" class="center center-align side-widget-content white yellow-text">
+                        <%- include('_partials/tag-list.html') %>
+                    </div>
+                </div>
+                <div class="col l12 m12 side-widget-area">
+                    <ul class="tabs">
+                        <li class="tab center side-widget"><a href="#months-list" class="active center-align yellow white-text">Helpful Links</a></li>
+                    </ul>
+                    <div id="months-list" class="center center-align side-widget-content white">
+                        <ul>
+                            <li><a href="../admin" target="_blank" class="yellow-text">Admin Login</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container text-center copyright">
-        Powered by <a href="#" target="_blank">Olatunde Oladunni - Web Application Developer</a>
-    </div>
+    </section>
+    <footer>
+        <div class="center center-align copyright black">
+            <b><span class="white-text">Powered By </span><a href="#" target="_blank" class="yellow-text">Olatunde Oladunni - Web Application Developer</a></b>
+        </div>
+    </footer>
 
     <!-- syntax highlighter -->
     <script src="/_content/syntaxhighlighter/js/shCore.js"></script>
@@ -113,19 +99,25 @@
         SyntaxHighlighter.defaults['wrap-lines'] = true;
     </script>
 
-    <!-- jquery -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
-    <!--materializecss-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <!-- Minified JQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
+	<!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.tabs').tabs();
+        });
+    </script>
     
     <!-- angular -->
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-messages.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
 
     <!-- meanie -->
-    <script src="/_dist/app.min.js"></script>
+    <script src="_dist/app.min.js"></script>
+    
 </body>
 </html>

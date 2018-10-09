@@ -1,0 +1,99 @@
+.section-header {
+    height: 135px;
+}
+
+.nav-list {
+    height: 52px !important;
+    margin-top: 18px !important;
+}
+
+.nav-item {
+    height: 52px !important;
+    margin-bottom: 10px;
+    font-family: oswald;
+}
+
+.blog-header {
+    height: 300px;
+    background-image: url('../_content/images/blog-header.jpg');
+    padding-top: 70px;
+}
+
+.section-body {
+    margin-top: 30px;
+    padding: 50px;
+}
+
+.side-widget {
+    width: 100%;
+}
+
+.side-widget-content {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.side-widget-area {
+    margin-bottom: 40px;
+}
+
+.post-area {
+    font-family: oswald !important;
+    font-size: 105%;
+}
+
+.post-publishdate {
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 10px;
+}
+
+.post-tag-slug {
+    width: 300px !important;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 10px;
+}
+
+.post-tag {
+    margin-left: 5px;
+    margin-right: 5px;
+    word-spacing: 15px;
+}
+
+.post-metadata {
+    margin-left: 220px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.post-title-area {
+    margin-bottom: 20px;
+}
+
+.post-summary-area {
+    margin-top: 20px;
+}
+
+.post-details-title {
+    font-family: oswald;
+}
+
+.share-post-area {
+    font-size: 20px;
+}
+
+.archive-details {
+    font-family: oswald;
+}
+
+
+.input-field {
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+}
+
+.text-input {
+    height: 200px;
+}
